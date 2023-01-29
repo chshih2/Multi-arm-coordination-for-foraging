@@ -1,0 +1,55 @@
+#####################################
+### Main Configuration Parameters ###
+#####################################
+
+num_arms: 1 # {1,2,4}
+state_type: "pos-near-target-wall-action-flag-index"
+use_arena: True
+# If num_arms :: 2, this parameter is ignored and set to "diagonal"
+arena_type: "mid-square"  # {"mid-square", "square", "diagonal"}
+use_moving_targets: False
+food_weights: 5.0
+flip_crawl_direction: False
+reward_type: "no-shift"  # {"shift", "no-shift"}
+
+use_obstacle: False
+target_type: "grid"  # {"constrain", "random", "grid", "obstacle"}
+render_plot: False
+load_model: "./"
+
+##########################
+### Trainer Parameters ###
+##########################
+
+# If multi_agent is false, action_size will be ignored and set to 2**num_arms
+action_size: 2
+multi_agent: False
+render: False
+total_epochs: 10000
+box_plot: False
+obs_num_targets: 5
+lr: 5.0e-5
+termination_step: 59
+bonus_coeff: 0.18
+num_targets: 20
+penalty_coeff: 1.0
+batch_size: 30
+rollout: 600
+eps: 0.2
+value_coeff: 1.0 # {1.0e-1, 1.0e-2}
+policy_coeff: 10.0
+entropy_coeff: 1.0e-3
+grad_clip: 100
+optimizer_type: "RMS" # {RMS, Adam}
+
+##########################
+### Evaluation Parameters ###
+##########################
+
+#######################################
+### Device Configuration Parameters ###
+#######################################
+gpu_set_memory_growth: True
+
+memo: ""
+verbose: True
